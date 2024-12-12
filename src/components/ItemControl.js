@@ -1,4 +1,5 @@
 import React from 'react';
+import NewItemForm from './NewItemForm';
 
 class ItemControl extends React.Component {
 
@@ -28,16 +29,18 @@ class ItemControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList} />
       buttonText = "Return to Merchandise List";
     } else {
-      buttonText = "Add Item";
+      buttonText = "Add Merch Item";
     }
     return (
       <React.Fragment>
+        {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
 }
 
-export default TicketControl;
+export default ItemControl;
