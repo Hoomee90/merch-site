@@ -1,5 +1,6 @@
 import React from 'react';
 import NewItemForm from './NewItemForm';
+import ItemList from './ItemList';
 
 class ItemControl extends React.Component {
 
@@ -32,6 +33,7 @@ class ItemControl extends React.Component {
       currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList} />
       buttonText = "Return to Merchandise List";
     } else {
+      currentlyVisibleState = <ItemList itemList={this.state.mainItemList} />
       buttonText = "Add Merch Item";
     }
     return (
