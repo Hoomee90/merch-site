@@ -8,8 +8,8 @@ function NewItemForm(props) {
     event.preventDefault();
     props.onNewItemCreation({
       name: event.target.name.value,
-      description: event.target.location.value,
-      quantity: parseInt(event.target.issue.value),
+      description: event.target.description.value,
+      quantity: parseInt(event.target.quantity.value),
       id: v4()
     });
   }
