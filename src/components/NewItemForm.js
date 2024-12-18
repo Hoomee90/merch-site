@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { v4 } from 'uuid';
 
 function NewItemForm(props) {
-
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
     props.onNewItemCreation({
@@ -13,22 +12,28 @@ function NewItemForm(props) {
       id: v4()
     });
   }
-
+  const displayBlock = {
+    display: "block",
+    marginTop: "10px"
+  }
   return (
     <React.Fragment>
       <form onSubmit={handleNewItemFormSubmission}>
         <input
           type='text'
           name='name'
-          placeholder='Merchandise Name' />
+          placeholder='Merchandise Name'
+          style={displayBlock} />
         <textarea
           name='description'
-          placeholder='Description' />
+          placeholder='Description'
+          style={displayBlock} />
         <input
           name='quantity'
           type='number'
-          placeholder='Number in stock' />
-        <button type='submit'>Submit</button>
+          placeholder='Number in stock'
+          style={displayBlock} />
+        <button type='submit' style={displayBlock}>Submit</button>
       </form>
     </React.Fragment>
   );
