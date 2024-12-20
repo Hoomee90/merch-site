@@ -1,18 +1,20 @@
-# 
+# Nondescript Merchandise Store
 
 #### By **Samantha Callie**
 
-#### 
+#### List Items and their stock
 
 ## Technologies Used
 
 * HTML
 * CSS
+* JS
 * npm
 * React
 
 ## Description
 
+This site allows users to create, read, update and delete item entries on a list. These items have a name, description, and number in stock. The stock number can be quickly changed with the "buy" and "restock" buttons.
 
 ## Component Diagram
 ![this project's component diagram](component-diagram.png)
@@ -22,6 +24,7 @@
 1. Press the green <> Code button and select Download ZIP
 2. Unzip file
 3. In the top directory, open your terminal (e.g., Terminal or GitBash) and run the command `npm i` (requires npm)
+3. Then run one of the scripts below
 
 
 ## Available Scripts
