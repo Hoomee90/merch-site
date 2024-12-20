@@ -6,8 +6,8 @@ import Header from "./Header";
 function App() {
   return (
     <React.Fragment>
-      <Container fluid>
-        <Header />
+      <Container>
+        <Header className="my-3" />
         <ItemControl />
       </Container>
     </React.Fragment>

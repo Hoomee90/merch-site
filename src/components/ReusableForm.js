@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 function ReusableForm(props) {
   const displayBlock = {
     display: "block",
-    marginTop: "10px"
+    marginTop: "12px",
+    marginBottom: "6px"
   }
   return (
     <React.Fragment>
