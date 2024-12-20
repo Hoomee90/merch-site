@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 
 function ItemDetail(props) {
   const { item } = props;
+  const disabled = item.quantity <= 0
 
   return (
     <React.Fragment>
       <h2>{item.name}</h2>
-      <h4>In stock: {item.quantity}</h4>
-      <button onClick={() => props.onClickingChangeStock(false)}>Buy</button>
-      <button onClick={() => props.onClickingChangeStock(true)}>Restock</button>
       <p>{item.description}</p>
+      <h4>In stock: {item.quantity}</h4>
+      <button onClick={() => props.onClickingChangeStock(false)} disabled={disabled}>Buy</button>
+      <button onClick={() => props.onClickingChangeStock(true)}>Restock</button>
       <hr />
       <button onClick={props.onClickingEdit}>Update Item</button>
       <button onClick={() => props.onClickingDelete(item.id)}>Delete Item</button>
