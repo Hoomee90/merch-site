@@ -21,6 +21,16 @@ class ItemControl extends React.Component {
     this.setState({ selectedItem: selectedItem });
   }
 
+  handleChangingStock = (isRestock) => {
+    const editedItem = { ...this.state.selectedItem, quantity: this.state.selectedItem.quantity + (isRestock ? 1 : - 1) }
+    const editedMainItemList = this.state.mainItemList
+      .map(item => item = item.id === this.state.selectedItem.id ? editedItem : item);
+    this.setState({
+      selectedItem: editedItem,
+      mainItemList: editedMainItemList
+    })
+  }
+
   handleDeletingItem = (id) => {
     const newMainItemList = this.state.mainItemList.filter(item => item.id !== id);
     this.setState({
@@ -79,7 +89,8 @@ class ItemControl extends React.Component {
       currentlyVisibleState = <ItemDetail
         item={this.state.selectedItem}
         onClickingDelete={this.handleDeletingItem}
-        onClickingEdit={this.handleEditClick} />
+        onClickingEdit={this.handleEditClick}
+        onClickingChangeStock={this.handleChangingStock} />
       buttonText = "Return to Merchandise List";
     }
     else if (this.state.formVisibleOnPage) {
