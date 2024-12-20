@@ -21,6 +21,14 @@ class ItemControl extends React.Component {
     this.setState({ selectedItem: selectedItem });
   }
 
+  handleDeletingItem = (id) => {
+    const newMainItemList = this.state.mainItemList.filter(item => item.id !== id);
+    this.setState({
+      mainItemList: newMainItemList,
+      selectedItem: null
+    });
+  }
+
   handleEditingItemInList = (itemToEdit) => {
     const editedMainItemList = this.state.mainItemList
       .map(item => item = item.id === this.state.selectedItem.id ? itemToEdit : item);
@@ -70,6 +78,7 @@ class ItemControl extends React.Component {
     else if (this.state.selectedItem) {
       currentlyVisibleState = <ItemDetail
         item={this.state.selectedItem}
+        onClickingDelete={this.handleDeletingItem}
         onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Merchandise List";
     }

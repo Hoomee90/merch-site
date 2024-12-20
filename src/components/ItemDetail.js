@@ -11,13 +11,15 @@ function ItemDetail(props) {
       <p>{item.description}</p>
       <hr />
       <button onClick={props.onClickingEdit}>Update Item</button>
+      <button onClick={() => props.onClickingDelete(item.id)}>Delete Item</button>
     </React.Fragment>
   );
 }
 
 ItemDetail.propTypes = {
   item: PropTypes.object,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickingDelete: PropTypes.func
 };
 
 export default ItemDetail;
