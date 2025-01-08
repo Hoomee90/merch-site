@@ -44,3 +44,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## Known Bugs
 
 * There are no known bugs at this time
+
+## License
+
+Copyright (c) 2025 Samantha Callie
+
+[GNU](LICENSE)
