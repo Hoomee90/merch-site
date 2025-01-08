@@ -5,17 +5,15 @@ function Item(props) {
   const inStock = props.quantity > 0;
 
   return (
-    <React.Fragment>
-      <div onClick={() => props.whenItemClicked(props.id)}>
-        <h3>{props.name}</h3>
-        <p>{props.description}</p>
-        {inStock
-          ? <p>In stock: <strong>{props.quantity}</strong></p>
-          : <p><strong>Out of stock</strong></p>
-        }
-        <hr />
-      </div>
-    </React.Fragment>
+    <div onClick={() => props.whenItemClicked(props.id)}>
+      <h3>{props.name}</h3>
+      <p>{props.description}</p>
+      {inStock
+        ? <p>In stock: <strong>{props.quantity}</strong></p>
+        : <p><strong>Out of stock</strong></p>
+      }
+      <hr />
+    </div>
   );
 }
 

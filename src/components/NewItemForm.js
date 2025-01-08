@@ -9,17 +9,15 @@ function NewItemForm(props) {
     props.onNewItemCreation({
       name: event.target.name.value,
       description: event.target.description.value,
-      quantity: parseInt(event.target.quantity.value),
+      quantity: event.target.quantity.value.length <= 0 ? 0 : parseInt(event.target.quantity.value),
       id: v4()
     });
   }
   return (
-    <React.Fragment>
-      <ReusableForm
-        formSubmissionHandler={handleNewItemFormSubmission}
-        buttonText="Submit"
-      />
-    </React.Fragment>
+    <ReusableForm
+      formSubmissionHandler={handleNewItemFormSubmission}
+      buttonText="Submit"
+    />
   );
 }
 
